@@ -11,8 +11,6 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=secret
  core-bank-api:
   image: zuhlke/core-bank-api:dev
-  links:
-    - mongodb-container
   ports:
     - "9090:9090"
  crowd-funding-api:
@@ -29,7 +27,5 @@ services:
     - "9097:9097"
  insurance-api:
   image: zuhlke/insurance-api:dev
-  links:
-    - core-bank-api
   ports:
     - "9091:9091"
